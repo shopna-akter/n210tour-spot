@@ -3,7 +3,7 @@ import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.init";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
     const { SignIn, user } = useContext(AuthContext)
@@ -44,7 +44,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('Loged In succesfuly')
-                navigate(location?.state ? location.state : '/')
+                // navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 console.error(error.message);
@@ -60,6 +60,7 @@ const Login = () => {
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen ">
+                <ToastContainer></ToastContainer>
                 <div className="hero-content flex-col lg:flex-row">
                     <img src="https://i.ibb.co/PDNThss/13.jpg" className="md:h-[500px] md:w-[600px]" alt="" />
                     <div className="card shrink-0 text-center w-full max-w-sm shadow-2xl bg-base-100">
