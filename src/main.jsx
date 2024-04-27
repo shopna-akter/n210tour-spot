@@ -11,6 +11,7 @@ import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import Register from './Components/Register/Register.jsx';
 import Login from './Components/Login/Login.jsx';
+import AddTouristSpot from './Components/AddTouristSpot/AddTouristSpot.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/Login',
         element: <Login></Login>
+      },
+      {
+        path: '/addTouristSpot',
+        element: <AddTouristSpot></AddTouristSpot>
       }
     ]
   },

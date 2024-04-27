@@ -4,13 +4,14 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.init";
 import { ToastContainer, toast } from "react-toastify";
-
+import { Link , useNavigate} from "react-router-dom";
 const Login = () => {
     const { SignIn, user } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate()
     console.log(user);
-    const googleProvider = new GoogleAuthProvider
-    const githubProvider = new GithubAuthProvider
+    const googleProvider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider()
     const auth = getAuth(app)
     const SignInWithGoogle = () => {
         signInWithPopup(auth, googleProvider)
@@ -36,15 +37,16 @@ const Login = () => {
     }
     const handleLogin = e => {
         e.preventDefault();
-        const password = e.target.password.value;
-        const email = e.target.email.value;
+        const form = e.target
+        const password = form.password.value;
+        const email = form.email.value;
         console.log(password, email);
         SignIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
                 toast.success('Loged In succesfuly')
-                // navigate(location?.state ? location.state : '/')
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 console.error(error.message);
@@ -70,7 +72,7 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" className="input input-bordered" required />
+                                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control relative">
                                 <label className="label">
@@ -90,13 +92,15 @@ const Login = () => {
                                 >
                                     {showPassword ? <FaEyeSlash /> : <FaEye />}
                                 </button>
+                                <div className="form-control mt-6">
+                                    <button className="btn btn-primary">Login</button>
+                                </div>
                                 <div className="divider">OR</div>
                                 <button onClick={SignInWithGoogle} className="flex btn mb-2 bg-yellow-300 hover:bg-orange-400">Sign in with <FaGoogle></FaGoogle></button>
                                 <button onClick={SignInWithGithub} className="flex btn btn-neutral">Sign in with <FaGithub></FaGithub></button>
+                                <h2>Dont have an account ? <Link to='/Register' className="btn-link">Register</Link></h2>
                             </div>
-                            <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
-                            </div>
+
                         </form>
                     </div>
                 </div>
