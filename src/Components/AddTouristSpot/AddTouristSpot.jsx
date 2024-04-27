@@ -15,18 +15,17 @@ const AddTouristSpot = () => {
         const User_Name = form.User_Name.value
         const totalVisitorsPerYear = form.totalVisitorsPerYear.value
         const short_description = form.short_description.value
-        const newCoffe = {User_Name ,User_Email , short_description, totalVisitorsPerYear ,tourists_spot_name, country_Name, location, seasonality, average_cost, travel_time, Photo }
-        console.log(newCoffe);
-        fetch('http://localhost:5000/coffies' , {
+        const newTour = {User_Name ,User_Email , short_description, totalVisitorsPerYear ,tourists_spot_name, country_Name, location, seasonality, average_cost, travel_time, Photo }
+        console.log(newTour);
+        fetch('http://localhost:5000/tours' , {
             method:'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body:   JSON.stringify(newCoffe)
+            body:   JSON.stringify(newTour)
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             if (data.insertedId) {
                 Swal.fire({
                     title: "Good job!",
@@ -38,7 +37,7 @@ const AddTouristSpot = () => {
     }
     return (
         <div className="flex flex-col items-center justify-center py-6 bg-gray-100">
-            <Link to="/" className="self-start ml-16 backdrop-blur-lg mb-5 text-[#374151]">
+            <Link to="/" className="self-start ml-16 backdrop-blur-lg mb-5 font-semibold">
                 ← Back to home
             </Link>
             <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-5xl">
@@ -95,7 +94,8 @@ const AddTouristSpot = () => {
                                 <input type="text" placeholder="Enter Tour short description" name="short_description" className="input input-bordered w-[204%]" />
                             </div>
                             <div>
-                                <button className="bg-[#D2B48C] w-[204%] p-2">Add Tour Spot</button>
+                                <button className="btn w-[204%] text-gray-100 hover:text-white btn-info">Add Tour Spot
+                                </button>
                             </div>
                         </div>
                     </div>

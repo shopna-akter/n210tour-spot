@@ -64,7 +64,7 @@ const Login = () => {
             <div className="hero bg-base-200 min-h-screen ">
                 <ToastContainer></ToastContainer>
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src="https://i.ibb.co/PDNThss/13.jpg" className="md:h-[500px] md:w-[600px]" alt="" />
+                    <img src="https://i.ibb.co/PDNThss/13.jpg" className="md:h-[500px] h-[450px] w-[450px] md:w-[600px]" alt="" />
                     <div className="card shrink-0 text-center w-full max-w-sm shadow-2xl bg-base-100">
                         <h2 className="text-4xl font-bold mt-2">Login!</h2>
                         <form onSubmit={handleLogin} className="card-body">
@@ -87,7 +87,7 @@ const Login = () => {
                                 />
                                 <button
                                     type="button"
-                                    className="absolute inset-y-0 right-4 bottom-28 pr-3 flex items-center"
+                                    className="absolute inset-y-0 right-4 -top-52 pr-3 flex items-center"
                                     onClick={togglePasswordVisibility}
                                 >
                                     {showPassword ? <FaEyeSlash /> : <FaEye />}

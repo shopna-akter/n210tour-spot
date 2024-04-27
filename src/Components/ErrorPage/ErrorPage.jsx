@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ErrorPage = () => {
     return (
         <div>
-            <div className="bg-gray-100 flex justify-center items-center h-screen">
+            <div className="bg-gray-100 flex justify-center items-center min-h-screen">
                 <div className="text-center">
                     <figure><img src="https://img.freepik.com/free-vector/hand-drawn-404-error_23-2147737389.jpg?w=740&t=st=1711558712~exp=1711559312~hmac=1b9fbb728d98b24ab1b65d716c0152d529a7d1fa63be5e3867e8af0c6149c6e4" alt="Error Illustration" className="mx-auto w-[370px] mb-8 rounded-xl" /></figure>
                     <h1 className="text-3xl font-bold mb-4">Error 404: Page Not Found</h1>

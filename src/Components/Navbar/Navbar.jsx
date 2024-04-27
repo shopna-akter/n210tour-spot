@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -16,13 +17,26 @@ const Navbar = () => {
     const Links = <>
         <NavLink to='/' className="mr-2 btn">Home</NavLink>
         <NavLink to='/allTouristsSpot' className="mr-2 btn">All Tourists Spot</NavLink>
-        <NavLink to='/addTouristsSpot' className="mr-2 btn ">Add Tourists Spot</NavLink>
+        <NavLink to='/addTouristSpot' className="mr-2 btn ">Add Tourists Spot</NavLink>
         <NavLink to='/myList' className="btn">My List</NavLink>
     </>
     const handleSignOut = () => {
-        logOut()
-            .then()
-            .catch()
+        Swal.fire({
+            title: "Are you sure to log out!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, do it!'
+        })
+            .then(result => {
+                if (result.isConfirmed) {
+
+                    logOut()
+                        .then()
+                        .catch()
+                }
+            })
     }
     return (
         <div>
@@ -50,7 +64,7 @@ const Navbar = () => {
                                 <img title={
                                     user ? (user.displayName || 'No user photo available') : 'No user  available'
                                 } className='h-8 w-8 rounded-full mr-1 ' src={userPhoto} alt="" />
-                                <button onClick={handleSignOut}>Sign Out</button>
+                                <button onClick={handleSignOut} className="btn">Sign Out</button>
                             </div>
                             :
                             <div>
