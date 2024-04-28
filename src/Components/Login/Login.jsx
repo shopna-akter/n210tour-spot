@@ -18,6 +18,7 @@ const Login = () => {
             .then(result => {
                 toast.success('Login Successful with google')
                 console.log(result);
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 toast.error('Login Failed with google')
@@ -29,6 +30,7 @@ const Login = () => {
             .then(result => {
                 toast.success('Login Successful with github')
                 console.log(result);
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 toast.error('Login Failed with github')
