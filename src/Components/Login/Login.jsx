@@ -4,9 +4,10 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.init";
 import { ToastContainer, toast } from "react-toastify";
-import { Link , useNavigate} from "react-router-dom";
+import { Link , useLocation, useNavigate} from "react-router-dom";
 const Login = () => {
     const { SignIn, user } = useContext(AuthContext)
+    const location = useLocation()
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate()
     console.log(user);

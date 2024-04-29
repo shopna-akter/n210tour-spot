@@ -22,8 +22,8 @@ const Home = () => {
                     }
                 </div>
             </div>
-            <CulturalDelights></CulturalDelights>
             <AdventureAwaits></AdventureAwaits>
+            <CulturalDelights></CulturalDelights>
         </div>
     );
 };

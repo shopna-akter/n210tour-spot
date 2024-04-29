@@ -22,12 +22,12 @@ const AdventureAwaits = () => {
                             <p className="mb-4">Discover the charm of quaint villages, bustling cities, and idyllic coastal towns as you journey through the diverse landscapes of Europe. From the sun-kissed beaches of the Mediterranean to the snow-capped peaks of the Alps, each destination promises a unique and unforgettable experience.</p>
                         </div>
                     </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                            <img src="https://via.placeholder.com/400" alt="European Landmarks" className="w-full h-64 object-cover object-center" />
+                    <div className="">
+                        <div className="bg-white rounded-lg overflow-hidden shadow-lg mb-10">
+                            <img src="https://i.ibb.co/10qrhBJ/slide-01.jpg" alt="European Landmarks" className="w-full h-80 object-cover object-center" />
                         </div>
                         <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                            <img src="https://via.placeholder.com/400" alt="European Cuisine" className="w-full h-64 object-cover object-center" />
+                            <img src="https://i.ibb.co/Xj2CzLJ/lake-tahoe.jpg" alt="European Cuisine" className="w-full h-80 object-cover object-center" />
                         </div>
                     </div>
                 </div>

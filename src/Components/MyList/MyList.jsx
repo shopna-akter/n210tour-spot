@@ -1,14 +1,18 @@
 import { useContext } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { FaDeleteLeft } from "react-icons/fa6";
+import { FaEdit } from "react-icons/fa";
 
 
 const MyList = () => {
     const { user } = useContext(AuthContext);
+    const location = useLocation()
+    const navigate = useNavigate()
     const tours = useLoaderData();
     console.log(tours, user);
-
+    
     let currentUserTour = null;
 
     if (tours && user) {
@@ -72,20 +76,20 @@ const MyList = () => {
                     </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                    <tr>
+                    <tr className="bg-gray-300">
                         <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="text-sm text-gray-900">{currentUserTour.tourists_spot_name}</div>
+                            <h2 className="text-lg font-semibold">{currentUserTour.tourists_spot_name}</h2>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="text-sm text-gray-900">{currentUserTour.location}</div>
+                            <h2 className="text-lg font-semibold">{currentUserTour.location}</h2>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="text-sm text-gray-900">{currentUserTour.seasonality}</div>
+                            <h2 className="text-lg font-semibold">{currentUserTour.seasonality}</h2>
                         </td>
                         <td className="px-6 gap-4 py-4 flex whitespace-nowrap text-sm text-gray-500">
                             <Link to={`/updateTour/${currentUserTour._id}`} className="text-indigo-600 btn hover:text-indigo-900">
-                                Update</Link>
-                            <button onClick={()=>handleDelete(currentUserTour._id)} className="text-red-600 hover:text-red-900 ml-2 btn">X</button>
+                                <FaEdit></FaEdit></Link>
+                            <button onClick={()=>handleDelete(currentUserTour._id)} className="text-red-600 hover:text-red-900 ml-2 btn"><FaDeleteLeft></FaDeleteLeft></button>
                         </td>
                     </tr>
 
