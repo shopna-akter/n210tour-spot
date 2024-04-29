@@ -5,34 +5,6 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const TouristSpot = ({ tour }) => {
   const { short_description, totalVisitorsPerYear, tourists_spot_name, country_Name, location, seasonality, average_cost, travel_time, Photo, _id } = tour
-  const handleDelete = _id => {
-    Swal.fire({
-      title: "Are you sure you want to delete?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, do it!'
-    })
-      .then(result => {
-        if (result.isConfirmed) {
-          fetch(`http://localhost:5000/tours/${_id}`, {
-            method: 'DELETE'
-          })
-            .then(res => res.json())
-            .then(data => {
-              console.log(data);
-              if (data.deleteCount > 0) {
-                Swal.fire({
-                  title: "data deleted!",
-                  text: "You clicked the button!",
-                  icon: "success"
-                });
-              }
-            })
-        }
-      })
-  }
   return (
     <div className="mx-4">
       <div >
