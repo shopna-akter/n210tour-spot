@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaDeleteLeft } from "react-icons/fa6";
@@ -8,11 +8,9 @@ import { FaEdit } from "react-icons/fa";
 
 const MyList = () => {
     const { user } = useContext(AuthContext);
-    const location = useLocation()
-    const navigate = useNavigate()
     const tours = useLoaderData();
     console.log(tours, user);
-    
+
     let currentUserTour = null;
 
     if (tours && user) {
@@ -20,8 +18,8 @@ const MyList = () => {
     }
 
     console.log(currentUserTour);
-    if(!currentUserTour){
-        return(
+    if (!currentUserTour) {
+        return (
             <div className="text-center">
                 <h2>You have not added any tour</h2>
             </div>
@@ -76,24 +74,31 @@ const MyList = () => {
                     </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                    <tr className="bg-gray-300">
-                        <td className="px-6 py-4 whitespace-nowrap">
-                            <h2 className="text-lg font-semibold">{currentUserTour.tourists_spot_name}</h2>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                            <h2 className="text-lg font-semibold">{currentUserTour.location}</h2>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                            <h2 className="text-lg font-semibold">{currentUserTour.seasonality}</h2>
-                        </td>
-                        <td className="px-6 gap-4 py-4 flex whitespace-nowrap text-sm text-gray-500">
-                            <Link to={`/updateTour/${currentUserTour._id}`} className="text-indigo-600 btn hover:text-indigo-900">
-                                <FaEdit></FaEdit></Link>
-                            <button onClick={()=>handleDelete(currentUserTour._id)} className="text-red-600 hover:text-red-900 ml-2 btn"><FaDeleteLeft></FaDeleteLeft></button>
-                        </td>
-                    </tr>
-
+                    {tours
+                        .filter(tour => tour.User_Email && user && tour.User_Email === user.email)
+                        .map((tour, index) => (
+                            <tr key={index} className={index % 2 === 0 ? "bg-gray-300" : "bg-white"}>
+                                <td className="px-6 py-4 whitespace-nowrap">
+                                    <h2 className="text-lg font-semibold">{tour.tourists_spot_name}</h2>
+                                </td>
+                                <td className="px-6 py-4 whitespace-nowrap">
+                                    <h2 className="text-lg font-semibold">{tour.location}</h2>
+                                </td>
+                                <td className="px-6 py-4 whitespace-nowrap">
+                                    <h2 className="text-lg font-semibold">{tour.seasonality}</h2>
+                                </td>
+                                <td className="px-6 gap-4 py-4 flex whitespace-nowrap text-sm text-gray-500">
+                                    <Link to={`/updateTour/${tour._id}`} className="text-indigo-600 btn hover:text-indigo-900">
+                                        <FaEdit></FaEdit>
+                                    </Link>
+                                    <button onClick={() => handleDelete(tour._id)} className="text-red-600 hover:text-red-900 ml-2 btn">
+                                        <FaDeleteLeft></FaDeleteLeft>
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
                 </tbody>
+
             </table>
 
         </div>
