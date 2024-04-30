@@ -1,4 +1,4 @@
-# My Awesome Property Listing Website : TourSpot
+# My Awesome Tourism Website : TourSpot
 
 Visit the live site: [https://assignment-p10.web.app/]
 
