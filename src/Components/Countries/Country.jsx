@@ -10,7 +10,7 @@ const Country = () => {
     }, [])
     return (
         <div className="text-center">
-            <h1 className="text-2xl font-bold mb-2"><Typewriter
+            <h1 className="text-3xl font-bold mb-2"><Typewriter
                 words={['Countries Section']}
                 loop={false}
                 cursor
@@ -19,7 +19,7 @@ const Country = () => {
                 deleteSpeed={50}
                 delaySpeed={1000}
             /></h1>
-            <p className="mx-40 font-medium mb-8">Embark on a virtual voyage through six enchanting countries with our country section. From the iconic landmarks of France to the artistic treasures of Italy, each country offers a unique blend of culture, history,br and natural beauty. Explore the charming streets of Spain, uncover the secrets of England past, wander through the picturesque landscapes of the Netherlands, and discover the breathtaking vistas of Switzerland. Whether you are a seasoned traveler or an armchair explorer, our country section promises to inspire your next adventure.</p>
+            <p className="lg:mx-40 font-medium mb-8">Embark on a virtual voyage through six enchanting countries with our country section. From the iconic landmarks of France to the artistic treasures of Italy, each country offers a unique blend of culture, history,br and natural beauty. Explore the charming streets of Spain, uncover the secrets of England past, wander through the picturesque landscapes of the Netherlands, and discover the breathtaking vistas of Switzerland. Whether you are a seasoned traveler or an armchair explorer, our country section promises to inspire your next adventure.</p>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
                 {
                     countries.map(country => (

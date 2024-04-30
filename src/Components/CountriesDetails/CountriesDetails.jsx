@@ -1,5 +1,6 @@
 import { FaLocationDot } from "react-icons/fa6";
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 const CountriesDetails = () => {
     const tours = useLoaderData();
@@ -8,6 +9,15 @@ const CountriesDetails = () => {
     console.log(countryTours);
     return (
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+            <h2>Tourist spots of : <span><Typewriter
+                words={[`${name}`]}
+                loop={false}
+                cursor
+                cursorStyle='_'
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+            /></span></h2>
             {
                 countryTours.map(countryTour => (
                     <div key={countryTour._id}>

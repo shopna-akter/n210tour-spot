@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const AddTouristSpot = () => {
     const handleAddTouristSpot = e => {
@@ -37,9 +36,6 @@ const AddTouristSpot = () => {
     }
     return (
         <div className="flex flex-col items-center justify-center py-6 bg-gray-100">
-            <Link to="/" className="self-start ml-16 backdrop-blur-lg mb-5 font-semibold">
-                ← Back to home
-            </Link>
             <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-5xl">
                 <h2 className="text-2xl font-bold text-center mb-4">Add New Tour</h2>
                 <p className="text-center text-gray-600 mb-8">
@@ -91,10 +87,10 @@ const AddTouristSpot = () => {
                         <div>
                             <div className="mb-2">
                                 <label className="block text-sm font-medium text-gray-700">short description</label>
-                                <input required type="text" placeholder="Enter Tour short description" name="short_description" className="input input-bordered w-[204%]" />
+                                <input required type="text" placeholder="Enter Tour short description" name="short_description" className="input input-bordered w-full md:w-[204%]" />
                             </div>
                             <div>
-                                <button className="btn w-[204%] text-gray-100 hover:text-white btn-info">Add Tour Spot
+                                <button className="btn w-full md:w-[204%] text-gray-100 hover:text-white btn-info">Add Tour Spot
                                 </button>
                             </div>
                         </div>

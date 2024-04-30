@@ -15,7 +15,7 @@ const Home = () => {
                 <Banner></Banner>
             </div>
             <div>
-                <div className="text-center my-6">
+                <div className="text-center md:my-6">
                     <h1 className="font-bold text-3xl mb-2"><Typewriter
                         words={['Explore Top Destinations']}
                         loop={false}
