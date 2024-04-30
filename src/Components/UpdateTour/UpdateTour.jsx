@@ -18,7 +18,7 @@ const UpdateTour = () => {
         const short_description = form.short_description.value
         const updatedTour = { short_description, totalVisitorsPerYear ,tourists_spot_name, country_Name, location, seasonality, average_cost, travel_time, Photo }
         console.log('short des:',short_description);
-        fetch(`http://localhost:5000/tours/${_id}` , {
+        fetch(`https://assignment-10-server-blush-zeta.vercel.app/tours/${_id}` , {
             method:'PUT',
             headers: {
                 'content-type': 'application/json'

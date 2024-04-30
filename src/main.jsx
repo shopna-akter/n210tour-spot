@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/tours')
+        loader: () => fetch('https://assignment-10-server-blush-zeta.vercel.app/tours')
       },
       {
         path: '/Register',
@@ -45,27 +45,27 @@ const router = createBrowserRouter([
       {
         element: <PrivateRoute><ToursDetails></ToursDetails></PrivateRoute>,
         path: '/:id',
-        loader: () => fetch('http://localhost:5000/tours')
+        loader: () => fetch('https://assignment-10-server-blush-zeta.vercel.app/tours')
       },
       {
         path:'/myList',
         element: <PrivateRoute><MyList></MyList></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/tours')
+        loader: () => fetch('https://assignment-10-server-blush-zeta.vercel.app/tours')
       },
       {
         path: '/updateTour/:id',
         element: <UpdateTour></UpdateTour>,
-        loader: ({params}) => fetch(`http://localhost:5000/tours/${params.id}`)
+        loader: ({params}) => fetch(`https://assignment-10-server-blush-zeta.vercel.app/tours/${params.id}`)
       },
       {
         path: '/allTouristsSpot',
         element: <AlltouristSpot></AlltouristSpot>,
-        loader: () => fetch('http://localhost:5000/tours')
+        loader: () => fetch('https://assignment-10-server-blush-zeta.vercel.app/tours')
       },
       {
         path: '/country/:name',
         element: <CountriesDetails></CountriesDetails>,
-        loader: () => fetch('http://localhost:5000/tours')
+        loader: () => fetch('https://assignment-10-server-blush-zeta.vercel.app/tours')
       }
     ]
   },

@@ -16,7 +16,7 @@ const AddTouristSpot = () => {
         const short_description = form.short_description.value
         const newTour = {User_Name ,User_Email , short_description, totalVisitorsPerYear ,tourists_spot_name, country_Name, location, seasonality, average_cost, travel_time, Photo }
         console.log(newTour);
-        fetch('http://localhost:5000/tours' , {
+        fetch('https://assignment-10-server-blush-zeta.vercel.app/tours' , {
             method:'POST',
             headers: {
                 'content-type': 'application/json'

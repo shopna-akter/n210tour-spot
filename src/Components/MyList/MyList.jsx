@@ -20,7 +20,7 @@ const MyList = () => {
             confirmButtonText: 'Yes, do it!'
         }).then(result => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/tours/${_id}`, {
+                fetch(`https://assignment-10-server-qt2epikv3-riyaduzzaman-nihals-projects.vercel.app/tours/${_id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())

@@ -1,8 +1,15 @@
-# React + Vite
+# My Awesome Property Listing Website : TourSpot
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Visit the live site: [https://assignment-p10.web.app/]
 
-Currently, two official plugins are available:
+## Features and Characteristics (Bullet points)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Awesome Authentication System**: Save your favorite Tours for easy access later.
+2. **Detailed Tour Listings**: View detailed information and high-quality images for each Tour.
+3. **Cool animation**: With a cool animation for better UI, easily search for properties based on location, price, and other criteria, enhancing the visual appeal and usability of the website.
+4. **Awesome Form System For Users**: form system for better UI
+5. **Responsive Design**: Enjoy a seamless experience across desktop, tablet, and mobile devices.
+## NPM Package Used
+
+- **React-simple-typewriter**: Used for cool type writing animation.
+- **React-tooltip**: Used for awesome tooltip.
