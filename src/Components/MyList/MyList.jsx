@@ -8,7 +8,7 @@ import { FaEdit } from "react-icons/fa";
 const MyList = () => {
     const { user } = useContext(AuthContext);
     const loadedTours = useLoaderData();
-    const [tours, setTours] = useState(loadedTours); // Initialize state with loaded tours
+    const [tours, setTours] = useState(loadedTours);
 
     const handleDelete = _id => {
         Swal.fire({
@@ -20,7 +20,7 @@ const MyList = () => {
             confirmButtonText: 'Yes, do it!'
         }).then(result => {
             if (result.isConfirmed) {
-                fetch(`https://assignment-10-server-qt2epikv3-riyaduzzaman-nihals-projects.vercel.app/tours/${_id}`, {
+                fetch(`https://assignment-10-server-blush-zeta.vercel.app/tours/${_id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())
@@ -28,7 +28,7 @@ const MyList = () => {
                     if (data.deletedCount > 0) {
                         Swal.fire("Deleted!", "Your tour has been deleted.", "success");
                         const updatedTours = tours.filter(tour => tour._id !== _id);
-                        setTours(updatedTours); // Update state
+                        setTours(updatedTours);
                     }
                 });
             }
