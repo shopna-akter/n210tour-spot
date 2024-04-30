@@ -49,49 +49,49 @@ const AddTouristSpot = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label className="block text-sm font-medium text-gray-700">User Name</label>
-                            <input type="text" placeholder="Enter User Name" name="User_Name" className="input input-bordered w-full" />
+                            <input required type="text" placeholder="Enter User Name" name="User_Name" className="input input-bordered w-full" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-700">User Email</label>
-                            <input type="text" placeholder="Enter User Email" name="User_Email" className="input input-bordered w-full" />
+                            <input required type="text" placeholder="Enter User Email" name="User_Email" className="input input-bordered w-full" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-700">Name</label>
-                            <input type="text" placeholder="Enter tourists spot name" name="tourists_spot_name" className="input input-bordered w-full" />
+                            <input required type="text" placeholder="Enter tourists spot name" name="tourists_spot_name" className="input input-bordered w-full" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-700">country Name</label>
-                            <input type="text" placeholder="Enter country Name" name="country_Name" className="input input-bordered w-full" />
+                            <input required type="text" placeholder="Enter country Name" name="country_Name" className="input input-bordered w-full" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-700">location</label>
-                            <input type="text" placeholder="Enter tour location" name="location" className="input input-bordered w-full" />
+                            <input required type="text" placeholder="Enter tour location" name="location" className="input input-bordered w-full" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-700">seasonality</label>
-                            <input type="text" placeholder="Enter tour seasonality" name="seasonality" className="input input-bordered w-full" />
+                            <input required type="text" placeholder="Enter tour seasonality" name="seasonality" className="input input-bordered w-full" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-700">Average Cost</label>
-                            <input type="text" placeholder="Enter Tour Average Cost" name="average_cost" className="input input-bordered w-full" />
+                            <input required type="text" placeholder="Enter Tour Average Cost" name="average_cost" className="input input-bordered w-full" />
                         </div>
 
                         <div>
                             <label className="block text-sm font-medium text-gray-700">Travel Time</label>
-                            <input type="text" placeholder="Enter Tour Travel Time" name="travel_time" className="input input-bordered w-full" />
+                            <input required type="text" placeholder="Enter Tour Travel Time" name="travel_time" className="input input-bordered w-full" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-700">Total Visitors Per Year</label>
-                            <input type="text" placeholder="Enter Tour Total Visitors Per Year" name="totalVisitorsPerYear" className="input input-bordered w-full" />
+                            <input required type="text" placeholder="Enter Tour Total Visitors Per Year" name="totalVisitorsPerYear" className="input input-bordered w-full" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-700">Photo</label>
-                            <input type="text" placeholder="Enter Tour Photo" name="Photo" className="input input-bordered w-full" />
+                            <input required type="text" placeholder="Enter Tour Photo" name="Photo" className="input input-bordered w-full" />
                         </div>
                         <div>
                             <div className="mb-2">
                                 <label className="block text-sm font-medium text-gray-700">short description</label>
-                                <input type="text" placeholder="Enter Tour short description" name="short_description" className="input input-bordered w-[204%]" />
+                                <input required type="text" placeholder="Enter Tour short description" name="short_description" className="input input-bordered w-[204%]" />
                             </div>
                             <div>
                                 <button className="btn w-[204%] text-gray-100 hover:text-white btn-info">Add Tour Spot

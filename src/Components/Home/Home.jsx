@@ -10,7 +10,9 @@ const Home = () => {
     const newTours = tours.slice(0, 6)
     return (
         <div>
-            <Banner></Banner>
+            <div>
+                <Banner></Banner>
+            </div>
             <div>
                 <div className="text-center my-6">
                     <h1 className="font-bold text-3xl mb-2">Explore Top Destinations</h1>

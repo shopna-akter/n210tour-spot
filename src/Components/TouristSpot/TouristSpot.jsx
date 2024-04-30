@@ -16,7 +16,7 @@ const TouristSpot = ({ newTour }) => {
               <div className="text-center mr-2">
                 <h2 className="font-bold text-xl">{tourists_spot_name}</h2>
               </div>
-              <p>{short_description}</p>
+              <p>{short_description.slice(0,200)}</p>
               <div className="card-actions justify-between">
                 <div className="flex gap-2">
                   <span>Cost:</span>

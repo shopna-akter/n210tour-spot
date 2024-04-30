@@ -3,6 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import './Link.css'
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
     const [userPhoto, setUserPhoto] = useState('https://i.ibb.co/yWR8BCV/user.png');
@@ -55,7 +57,7 @@ const Navbar = () => {
         <div>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
-                    <div className="dropdown">
+                    <div className="dropdown z-50">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
@@ -81,12 +83,14 @@ const Navbar = () => {
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </label>
+                    <Tooltip id="my-tooltip" />
                     {
                         user ?
-                            <div className="flex gap-2">
-                                <img title={
-                                    user ? (user.displayName || 'No user photo available') : 'No user  available'
-                                } className='h-8 w-8 rounded-full mt-2' src={userPhoto} alt="" />
+                            <div className="flex gap-2 ">
+                                <img
+                                    data-tooltip-id="my-tooltip"
+                                    data-tooltip-content={user ? (user.displayName || 'No user photo available') : 'No user  available'}
+                                    data-tooltip-place="left" className='h-8 w-8 rounded-full mt-2' src={userPhoto} alt="" />
                                 <button onClick={handleSignOut} className="btn">Sign Out</button>
                             </div>
                             :
