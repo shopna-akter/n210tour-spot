@@ -17,7 +17,7 @@ const UpdateTour = () => {
         const totalVisitorsPerYear = form.totalVisitorsPerYear.value
         const short_description = form.short_description.value
         const updatedTour = { short_description, totalVisitorsPerYear ,tourists_spot_name, country_Name, location, seasonality, average_cost, travel_time, Photo }
-        console.log(updatedTour);
+        console.log('short des:',short_description);
         fetch(`http://localhost:5000/tours/${_id}` , {
             method:'PUT',
             headers: {
@@ -82,7 +82,7 @@ const UpdateTour = () => {
                             <div>
                                 <div className="mb-2">
                                     <label className="block text-sm font-medium text-gray-700">short description</label>
-                                    <input type="text" defaultValue={short_description} placeholder="Enter Tour short description" name="short_description" className="input input-bordered w-[204%]" />
+                                    <textarea type="text" defaultValue={short_description} name="short_description" placeholder="Enter your description" className="textarea textarea-bordered textarea-lg w-[200%]" />
                                 </div>
                                 <div>
                                     <button className="btn w-[204%] text-gray-100 hover:text-white btn-info">Update Tour Spot

@@ -5,26 +5,36 @@ const CulturalDelights = () => {
     return (
         <section className="bg-gray-100 py-16">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center mb-8">Cultural Delights</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* Traditional Arts Card */}
-                    <div className="bg-white rounded-lg shadow-md p-6">
-                        <h3 className="text-xl font-semibold mb-4">Traditional Arts</h3>
-                        <p className="text-gray-700">Experience the vibrant tapestry of Southeast Asia's traditional arts, from intricate handwoven textiles to mesmerizing dance performances.</p>
+                <h2 className="text-3xl font-bold text-center mb-8">Success Metrics</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="bg-white rounded-lg text-center shadow-md p-6">
+                        <img src="https://via.placeholder.com/400x250" alt="Users" className="mt-4 w-full h-auto" />
+                        <h3 className="text-xl font-semibold mb-4">Users</h3>
+                        <p className="text-gray-700">Total Users: 2000</p>
+                        <p className="text-gray-700">Active Users: 1500</p>
                     </div>
-                    {/* Festivals Card */}
-                    <div className="bg-white rounded-lg shadow-md p-6">
-                        <h3 className="text-xl font-semibold mb-4">Festivals</h3>
-                        <p className="text-gray-700">Celebrate the region's diverse cultural heritage at lively festivals showcasing colorful parades, music, and culinary delights.</p>
+                    <div className="bg-white rounded-lg text-center shadow-md p-6">
+                        <img src="https://via.placeholder.com/400x250" alt="Deliveries" className="mt-4 w-full h-auto" />
+                        <h3 className="text-xl font-semibold mb-4">Deliveries</h3>
+                        <p className="text-gray-700">Total Deliveries: 1500</p>
+                        <p className="text-gray-700">Successful Deliveries: 1000</p>
                     </div>
-                    {/* Cuisine Card */}
-                    <div className="bg-white rounded-lg shadow-md p-6">
-                        <h3 className="text-xl font-semibold mb-4">Cuisine</h3>
-                        <p className="text-gray-700">Indulge your taste buds with a culinary journey through Southeast Asia's mouthwatering dishes, blending exotic spices and flavors.</p>
+                    <div className="bg-white rounded-lg text-center shadow-md p-6">
+                        <img src="https://via.placeholder.com/400x250" alt="Revenue" className="mt-4 w-full h-auto" />
+                        <h3 className="text-xl font-semibold mb-4">Revenue</h3>
+                        <p className="text-gray-700">Total Revenue: €5000</p>
+                        <p className="text-gray-700">Monthly Revenue: €1000</p>
+                    </div>
+                    <div className="bg-white rounded-lg text-center shadow-md p-6">
+                        <img src="https://via.placeholder.com/400x250" alt="Growth" className="mt-4 w-full h-auto" />
+                        <h3 className="text-xl font-semibold mb-4">Growth</h3>
+                        <p className="text-gray-700">Monthly Growth: 10%</p>
+                        <p className="text-gray-700">Annual Growth: 50%</p>
                     </div>
                 </div>
             </div>
         </section>
+
     );
 };
 
