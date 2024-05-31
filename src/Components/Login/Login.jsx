@@ -4,13 +4,13 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.init";
 import { ToastContainer, toast } from "react-toastify";
-import { Link , useLocation, useNavigate} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 const Login = () => {
     const { SignIn, user } = useContext(AuthContext)
     const location = useLocation()
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate()
-    console.log(user);
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
     const auth = getAuth(app)
@@ -49,7 +49,16 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('Loged In succesfuly')
-                navigate(location?.state ? location.state : '/')
+                const loggedInUser = { email }
+                axios.post('http://localhost:5000/jwt', loggedInUser, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data);
+                        if (res.data.success) {
+                            navigate(location?.state ? location.state : '/')
+                        }
+                    })
+                    .catch(error => console.log(error));
+
             })
             .catch(error => {
                 console.error(error.message);
@@ -64,12 +73,12 @@ const Login = () => {
     };
     return (
         <div>
-            <div className="hero bg-base-200 min-h-screen ">
+            <div className="hero  min-h-screen ">
                 <ToastContainer></ToastContainer>
                 <div className="hero-content flex-col lg:flex-row">
                     <img src="https://i.ibb.co/PDNThss/13.jpg" className="md:h-[500px] h-[450px] w-[450px] md:w-[600px]" alt="" />
                     <div className="card shrink-0 text-center w-full max-w-sm shadow-2xl bg-base-100">
-                        <h2 className="text-4xl font-bold mt-2">Login!</h2>
+                        <h2 className="text-4xl font-bold mt-2">Login now to Tourspot!!</h2>
                         <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">

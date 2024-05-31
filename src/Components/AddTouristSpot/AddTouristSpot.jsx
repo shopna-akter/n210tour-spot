@@ -1,5 +1,9 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
 const AddTouristSpot = () => {
+    const {user} = useContext(AuthContext)
+    // console.log(user.email , user)
     const handleAddTouristSpot = e => {
         e.preventDefault()
         const form = e.target
@@ -15,7 +19,7 @@ const AddTouristSpot = () => {
         const totalVisitorsPerYear = form.totalVisitorsPerYear.value
         const short_description = form.short_description.value
         const newTour = {User_Name ,User_Email , short_description, totalVisitorsPerYear ,tourists_spot_name, country_Name, location, seasonality, average_cost, travel_time, Photo }
-        console.log(newTour);
+        // console.log(newTour);
         fetch('https://assignment-10-server-blush-zeta.vercel.app/tours' , {
             method:'POST',
             headers: {
@@ -49,7 +53,7 @@ const AddTouristSpot = () => {
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-700">User Email</label>
-                            <input required type="text" placeholder="Enter User Email" name="User_Email" className="input input-bordered w-full" />
+                            <input defaultValue={user.email} required type="text" placeholder="Enter User Email" name="User_Email" className="input input-bordered w-full" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-700">Name</label>
@@ -87,10 +91,11 @@ const AddTouristSpot = () => {
                         <div>
                             <div className="mb-2">
                                 <label className="block text-sm font-medium text-gray-700">short description</label>
-                                <input required type="text" placeholder="Enter Tour short description" name="short_description" className="input input-bordered w-full md:w-[204%]" />
+                                <textarea required type="text" placeholder="Enter Tour short description" name="short_description" className="textarea textarea-bordered w-full md:w-[204%]" />
                             </div>
                             <div>
-                                <button className="btn w-full md:w-[204%] text-gray-100 hover:text-white btn-info">Add Tour Spot
+                                <button className="btn w-full md:w-[204%] text-gray-100 
+                                hover:text-white btn-info">Add Tour Spot
                                 </button>
                             </div>
                         </div>
